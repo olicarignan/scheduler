@@ -6,11 +6,10 @@ import useApplicationData from "hooks/useApplicationData";
 import {
   getAppointmentsForDay,
   getInterview,
-  getInterviewerForDay,
+  getInterviewerForDay
 } from "helpers/selectors";
 
 export default function Application() {
-
   const {
     state,
     setDay,
@@ -19,25 +18,26 @@ export default function Application() {
     getSpotsForDay
   } = useApplicationData();
 
-  const appointments = getAppointmentsForDay(state, state.day).map(appointment => {
-    const interviewers = getInterviewerForDay(state, state.day);
-    return (
-      <Appointment
-        key={appointment.id}
-        id={appointment.id}
-        time={appointment.time}
-        interview={getInterview(state, appointment.interview)}
-        interviewers={interviewers}
-        bookInterview={bookInterview}
-        cancelInterview={cancelInterview}
-        getSpotsForDay={getSpotsForDay}
-        appointments={state.appointments}
-        days={state.days}
-        day={state.day}
-      />
-     );
+  const appointments = getAppointmentsForDay(state, state.day).map(
+    appointment => {
+      const interviewers = getInterviewerForDay(state, state.day);
+      return (
+        <Appointment
+          key={appointment.id}
+          id={appointment.id}
+          time={appointment.time}
+          interview={getInterview(state, appointment.interview)}
+          interviewers={interviewers}
+          bookInterview={bookInterview}
+          cancelInterview={cancelInterview}
+          getSpotsForDay={getSpotsForDay}
+          appointments={state.appointments}
+          days={state.days}
+          day={state.day}
+        />
+      );
     }
-   );
+  );
 
   return (
     <main className="layout">
@@ -49,11 +49,13 @@ export default function Application() {
         />
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
-          <DayList days={state.days} 
-                   selectedDay={state.day} 
-                   setDay={setDay} 
-                   getSpotsForDay={getSpotsForDay} 
-                   appointments={state.appointments}/>
+          <DayList
+            days={state.days}
+            selectedDay={state.day}
+            setDay={setDay}
+            getSpotsForDay={getSpotsForDay}
+            appointments={state.appointments}
+          />
         </nav>
         <img
           className="sidebar__lhl sidebar--centered"

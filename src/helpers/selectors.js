@@ -12,13 +12,13 @@ export function getAppointmentsForDay(state, day) {
   return appointment;
 }
 
-export  function getInterview(state, interview) {
-  if(!interview) {
+export function getInterview(state, interview) {
+  if (!interview) {
     return null;
   } else {
     const student = interview.student;
     const interviewer = state.interviewers[interview.interviewer];
-    const interviewObject = { student, interviewer};
+    const interviewObject = { student, interviewer };
     return interviewObject;
   }
 }
