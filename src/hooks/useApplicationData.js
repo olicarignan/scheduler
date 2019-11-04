@@ -23,9 +23,6 @@ export default function useApplicationData() {
           ...state.appointments,
           [id]: appointment
         };
-        console.log("action", action);
-        console.log("state", { ...state, appointments, day, id });
-
         return { ...state, appointments, id };
       }
       default:
