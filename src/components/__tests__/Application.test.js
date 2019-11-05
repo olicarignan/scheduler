@@ -147,6 +147,10 @@ describe("Appointment", () => {
     fireEvent.click(getByText(appointment, 'Save'));
 
     expect(getByText(appointment, 'Saving')).toBeInTheDocument();
+
+    await waitForElement(() =>
+      getByText(appointment, 'Could not save appointment')
+    );
   });
 
   it('7. shows the delete error when failing to delete an existing appointment', async () => {
@@ -169,5 +173,9 @@ describe("Appointment", () => {
     fireEvent.click(getByText(appointment, 'Confirm'));
 
     expect(getByText(appointment, 'Deleting')).toBeInTheDocument();
+
+    await waitForElement(() =>
+      getByText(appointment, 'Could not delete appointment')
+    )
   });
 });

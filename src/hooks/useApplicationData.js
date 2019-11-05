@@ -43,8 +43,8 @@ export default function useApplicationData() {
       .then(() => {
         dispatch({ type: SET_INTERVIEW, id, interview: null });
       })
-      .catch(error => {
-        return error;
+      .catch(() => {
+       throw Error;
       });
   };
 
@@ -57,8 +57,8 @@ export default function useApplicationData() {
           dispatch({ type: SET_INTERVIEW, id, interview });
         }
       })
-      .catch(error => {
-        return error;
+      .catch(() => {
+        throw Error;
       });
   };
 
