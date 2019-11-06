@@ -15,15 +15,9 @@ import {
 } from "@testing-library/react";
 
 import Application from "components/Application";
-import Appointment from "components/Appointment/index";
 import axios from "axios";
 
 afterEach(cleanup);
-
-describe("Appointment", () => {
-  it("defaults to Monday and changes the schedule when a new day is selected", () => {
-    render(<Appointment />);
-  });
 
   it("1. defaults to Monday and changes the schedule when a new day is selected", async () => {
     const { getByText } = render(<Application />);
