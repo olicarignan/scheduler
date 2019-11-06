@@ -50,19 +50,19 @@ Edit appointment form with the information previously entered by the user as def
 
 Install dependencies with `npm install`
 
-## Running Webpack Development Server
+### Running Webpack Development Server
 
 ```bash
 npm start
 ```
 
-## Running Jest Test Framework
+### Running Jest Test Framework
 
 ```bash
 npm test
 ```
 
-## Running Storybook Visual Testbed
+### Running Storybook Visual Testbed
 
 ```bash
 npm run storybook
